@@ -1,4 +1,5 @@
 <?php
+require_once "menu.php"; // ✅ Agregamos el menú
 
 $libros = [
     ["titulo" => "PHP para Principiantes", "autor" => "Carlos Ruiz", "precio" => 19.99, "categoria" => "Desarrollo Web"],
@@ -7,41 +8,49 @@ $libros = [
     ["titulo" => "Bases de Datos SQL", "autor" => "Ana López", "precio" => 22.50, "categoria" => "Bases de Datos"]
 ];
 
-echo '<!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        table { width: 60%; margin: 20px auto; border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 10px; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
+    <link rel="stylesheet" href="css/styles.css"> <!-- ✅ Conectar CSS externo -->
 </head>
-<body>';
+<body>
 
-echo '<h2 style="text-align: center;">Información de todos los libros</h2>';
-echo '<table>';
-echo '<tr><th>Título</th><th>Autor</th><th>Precio (€)</th><th>Categoría</th></tr>';
-foreach ($libros as $libro) {
-    echo "<tr>
-        <td>{$libro['titulo']}</td>
-        <td>{$libro['autor']}</td>
-        <td>{$libro['precio']}</td>
-        <td>{$libro['categoria']}</td>
-    </tr>";
-}
-echo '</table>';
+<h1>Biblioteca</h1>
 
-// libros con categoria "Desarrollo Web"
-$librosDesarrolloWeb = array_filter($libros, fn($libro) => $libro["categoria"] === "Desarrollo Web");
+<h2>Información de todos los libros</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Precio (€)</th>
+        <th>Categoría</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($libros as $libro): ?>
+        <tr>
+            <td><?= $libro['titulo']; ?></td>
+            <td><?= $libro['autor']; ?></td>
+            <td><?= number_format($libro['precio'], 2); ?> €</td>
+            <td><?= $libro['categoria']; ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
 
-echo '<h2 style="text-align: center;">Libros de Desarrollo Web</h2>';
-echo '<ul>';
-foreach ($librosDesarrolloWeb as $libro) {
-    echo "<li>{$libro['titulo']} - {$libro['autor']}</li>";
-}
-echo '</ul>';
+<!-- 🔹 LIBROS DE DESARROLLO WEB -->
+<h2>Libros de Desarrollo Web</h2>
+<ul>
+    <?php foreach (array_filter($libros, fn($libro) => $libro["categoria"] === "Desarrollo Web") as $libro): ?>
+        <li><?= $libro['titulo']; ?> - <?= $libro['autor']; ?></li>
+    <?php endforeach; ?>
+</ul>
 
-echo '</body></html>';
+</body>
+</html>

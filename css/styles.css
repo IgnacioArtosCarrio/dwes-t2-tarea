@@ -1,0 +1,148 @@
+
+/* configuracion general */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* encabezados */
+
+h1 {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+/* menu de navegacion */
+
+nav {
+    background-color: #003366;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+    background: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #0056b3;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 180px;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+}
+
+
+/* listas */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: white;
+    margin: 10px auto;
+    padding: 12px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+ul li:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* biblioteca */
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e6f0ff;
+}
+
+
+/* triangulo */
+.triangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+pre {
+    font-family: monospace;
+    font-size: 22px;
+    color: #007BFF;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
